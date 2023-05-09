@@ -44,7 +44,10 @@ const CreateComment: React.FC = () => {
   };
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
+    <form
+      className="space-y-4 flex flex-col justify-center mx-auto border border-gray-300 rounded-md shadow-md p-4 my-4"
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col">
         <label htmlFor="name" className="text-sm font-medium mb-2">
           Name
@@ -70,7 +73,7 @@ const CreateComment: React.FC = () => {
       </div>
       <button
         type="submit"
-        className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        className="bg-yellow-400 text-black border-2 border-black font-medium py-2 px-4 rounded-md w-1/2 mx-auto"
       >
         Submit
       </button>

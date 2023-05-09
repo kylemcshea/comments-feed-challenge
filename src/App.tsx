@@ -8,8 +8,10 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <CreateComment />
-      <CommentsFeed />
+      <div className="w-full mx-auto p-16">
+        <CreateComment />
+        <CommentsFeed />
+      </div>
     </QueryClientProvider>
   );
 }
