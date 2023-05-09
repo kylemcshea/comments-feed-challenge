@@ -30,3 +30,4 @@ This project aims to establish a connection with a REST API containing comments 
 - [ ] Use of Axios for API requests
 - [ ] Add a "No comments" message when there are no comments to display
 - [ ] Add a Navigation bar at the top to expand the application's functionality
+- [ ] Deploy to Vercel
