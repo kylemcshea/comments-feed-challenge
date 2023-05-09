@@ -22,9 +22,11 @@ This project aims to establish a connection with a REST API containing comments 
 - [ ] Captivating loading screen to welcome users
 - [ ] Jest unit tests
 - [ ] Continuous integration and continuous deployment (CI/CD) using Jest, integrated with GitHub
-- [ ] Animated button in the comment creation section
+- [x] Animated button in the comment creation section
 - [ ] Clean and structured repository file organization
 - [ ] Separate API calls in its own file for easy function exports
 - [ ] Responsive design for mobile devices
 - [ ] Mailchimp-like color palette
 - [ ] Use of Axios for API requests
+- [ ] Add a "No comments" message when there are no comments to display
+- [ ] Add a Navigation bar at the top to expand the application's functionality
