@@ -5,4 +5,5 @@
 html {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; /* Use Mailchimp font stack */
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
