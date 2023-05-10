@@ -1,13 +1,15 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import CommentsFeed from "./components/CommentsFeed";
 import CreateComment from "./components/CreateComment";
+import TextAnimation from "./components/TextAnimation";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="w-full mx-auto p-16">
+      <TextAnimation />
+      <div className="w-full mx-auto p-16 mt-8">
         <CreateComment />
         <CommentsFeed />
       </div>
