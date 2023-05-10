@@ -3,12 +3,23 @@ import React from "react";
 // Credits to Flowbite:
 // https://flowbite.com/docs/components/spinner/#:~:text=The%20spinner%20component%20can%20be,being%20fetched%20from%20your%20server.
 
-const LoadingSpinner: React.FC = () => {
+const COLOR_MAP = {
+  yellow: "fill-yellow-400",
+  blue: "fill-blue-400",
+};
+
+type LoadingSpinnerProps = {
+  color?: keyof typeof COLOR_MAP;
+};
+
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
+  color = "yellow",
+}) => {
   return (
     <div role="status">
       <svg
         aria-hidden="true"
-        className="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-yellow-400"
+        className={`inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 ${COLOR_MAP[color]}`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
