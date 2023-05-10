@@ -8,18 +8,28 @@ const COLOR_MAP = {
   blue: "fill-blue-400",
 };
 
+const SIZE_MAP = {
+  sm: "w-8 h-8",
+  md: "w-16 h-16",
+  lg: "w-24 h-24",
+};
+
 type LoadingSpinnerProps = {
   color?: keyof typeof COLOR_MAP;
+  size?: keyof typeof SIZE_MAP;
+  customClasses?: string;
 };
 
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   color = "yellow",
+  size = "sm",
+  customClasses = "",
 }) => {
   return (
-    <div role="status" className="flex justify-center mt-8">
+    <div role="status" className={`flex justify-center ${customClasses}`}>
       <svg
         aria-hidden="true"
-        className={`inline w-16 h-16 mr-2 text-gray-200 animate-spin dark:text-gray-600 ${COLOR_MAP[color]}`}
+        className={`inline mr-2 text-gray-200 animate-spin dark:text-gray-600 ${COLOR_MAP[color]} ${SIZE_MAP[size]}`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

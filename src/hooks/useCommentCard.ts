@@ -24,8 +24,6 @@ export const useCommentCard = ({
   ];
   const dayOfWeek = dayNames[date.getDay()];
 
-  console.log({ date });
-
   const time = date.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",

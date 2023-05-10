@@ -20,7 +20,7 @@ const CommentsFeed: React.FC = () => {
     hasNextPage,
   } = useCommentsFeed();
 
-  if (isLoading) return <LoadingSpinner />;
+  if (isLoading) return <LoadingSpinner size="md" customClasses="mt-8" />;
 
   if (isError)
     return (
@@ -40,7 +40,7 @@ const CommentsFeed: React.FC = () => {
       ) : (
         <CommentsNoticeCard message={"Be the first one to post a comment!"} />
       )}
-      {isFetchingNextPage ? <LoadingSpinner /> : null}
+      {isFetchingNextPage ? <LoadingSpinner size="md" /> : null}
       {!hasNextPage ? (
         <CommentsNoticeCard message={"No more comments to load!"} />
       ) : null}

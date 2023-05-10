@@ -34,15 +34,12 @@ const CreateComment: React.FC = () => {
   const onSubmit = async (data: CreateCommentFormInputs) =>
     commentMutation
       .mutateAsync(data)
-      .then((res) => {
-        console.log({ res });
-        reset();
-      })
+      .then(() => reset())
       .catch((err) => {
         console.error(err);
       });
 
-  const { isLoading } = commentMutation;
+  const { isLoading, isError } = commentMutation;
 
   return (
     <motion.form
@@ -104,7 +101,13 @@ const CreateComment: React.FC = () => {
         whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
         disabled={isLoading}
       >
-        {isLoading ? <LoadingSpinner color="blue" /> : "Submit"}
+        {isError ? (
+          "Something went wrong..."
+        ) : isLoading ? (
+          <LoadingSpinner color="blue" />
+        ) : (
+          "Submit"
+        )}
       </motion.button>
     </motion.form>
   );
