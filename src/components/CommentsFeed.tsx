@@ -2,6 +2,7 @@ import React from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import CommentCard from "./CommentCard";
 import { useCommentsFeed } from "../hooks/useCommentsFeed";
+import NoCommentsCard from "./NoCommentsCard";
 
 export type Comment = {
   id: number;
@@ -29,7 +30,7 @@ const CommentsFeed: React.FC = () => {
           </li>
         ))
       ) : (
-        <div>No comments</div>
+        <NoCommentsCard />
       )}
     </ul>
   );

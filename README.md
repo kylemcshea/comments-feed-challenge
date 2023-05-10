@@ -28,7 +28,7 @@ This project aims to establish a connection with a REST API containing comments 
 - [ ] Responsive design for mobile devices
 - [ ] Mailchimp-like color palette
 - [ ] Use of Axios for API requests
-- [ ] Add a "No comments" message when there are no comments to display
+- [x] Add a "No comments" message when there are no comments to display
 - [ ] Add a Navigation bar at the top to expand the application's functionality
 - [ ] Deploy to Vercel
 - [x] Use Zod to validate the comment creation form
