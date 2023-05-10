@@ -2,7 +2,7 @@ import React from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import CommentCard from "./CommentCard";
 import { useCommentsFeed } from "../hooks/useCommentsFeed";
-import NoCommentsCard from "./NoCommentsCard";
+import CommentsNoticeCard from "./CommentsNoticeCard";
 
 export type Comment = {
   id: number;
@@ -19,7 +19,12 @@ const CommentsFeed: React.FC = () => {
   if (isLoading) return <LoadingSpinner />;
 
   // TODO: Handle error state
-  if (isError) return <div role="alert">Error fetching comments</div>;
+  if (isError)
+    return (
+      <CommentsNoticeCard
+        message={"Uh oh! Something went wrong on our end..."}
+      />
+    );
 
   return (
     <ul>
@@ -30,7 +35,7 @@ const CommentsFeed: React.FC = () => {
           </li>
         ))
       ) : (
-        <NoCommentsCard />
+        <CommentsNoticeCard message={"Be the first one to post a comment!"} />
       )}
     </ul>
   );

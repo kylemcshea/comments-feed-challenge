@@ -17,9 +17,9 @@ describe("[[ COMMENTS FEED ]]", () => {
     (useCommentsFeed as jest.Mock).mockReturnValue({ isError: true });
 
     render(<CommentsFeed />);
-    expect(screen.getByRole("alert")).toHaveTextContent(
-      "Error fetching comments"
-    );
+    expect(
+      screen.getByText("Uh oh! Something went wrong on our end...")
+    ).toBeInTheDocument();
   });
 
   test("comments render", () => {
@@ -38,6 +38,8 @@ describe("[[ COMMENTS FEED ]]", () => {
     (useCommentsFeed as jest.Mock).mockReturnValue({ data: [] });
 
     render(<CommentsFeed />);
-    expect(screen.getByText("No comments")).toBeInTheDocument();
+    expect(
+      screen.getByText("Be the first one to post a comment!")
+    ).toBeInTheDocument();
   });
 });
