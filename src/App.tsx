@@ -9,7 +9,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TextAnimation />
-      <div className="w-full mx-auto p-16 mt-8">
+      <div className="w-full mx-auto p-16 mt-8 md:mt-12 sm:mt-16">
         <CreateComment />
         <CommentsFeed />
       </div>
