@@ -7,11 +7,8 @@ import {
 } from "./routes";
 import axios from "axios";
 
-const LOCAL_HOST = "http://localhost:3001";
-
-const API_URL = import.meta.env.VITE_SOME_KEY;
-
-axios.defaults.baseURL = API_URL || LOCAL_HOST;
+axios.defaults.baseURL =
+  "https://kylemcshea-opulent-space-fortnight-wgg4pjrgx5rc56gj-3001.preview.app.github.dev";
 
 export const getComments = (): Promise<CommentFetchResponse> =>
   axios.get<CommentFetchResponse>(GET_COMMENTS).then((res) => res.data);
