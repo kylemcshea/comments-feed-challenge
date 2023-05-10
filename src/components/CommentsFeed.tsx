@@ -18,7 +18,7 @@ const CommentsFeed: React.FC = () => {
   if (isLoading) return <LoadingSpinner />;
 
   // TODO: Handle error state
-  if (isError) return <div>Error fetching comments</div>;
+  if (isError) return <div role="alert">Error fetching comments</div>;
 
   return (
     <ul>
