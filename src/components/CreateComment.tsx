@@ -5,6 +5,7 @@ import { useMutation } from "react-query";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import LoadingSpinner from "./LoadingSpinner";
+import { createComment } from "../api/api";
 
 const CreateCommentSchema = z.object({
   name: z
@@ -14,7 +15,7 @@ const CreateCommentSchema = z.object({
   message: z.string().nonempty({ message: "Message is required" }),
 });
 
-type CreateCommentFormInputs = z.infer<typeof CreateCommentSchema>;
+export type CreateCommentFormInputs = z.infer<typeof CreateCommentSchema>;
 
 const CreateComment: React.FC = () => {
   const {
@@ -27,13 +28,7 @@ const CreateComment: React.FC = () => {
   });
 
   const commentMutation = useMutation((variables: CreateCommentFormInputs) =>
-    fetch("http://localhost:3001/createComment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(variables),
-    })
+    createComment(variables)
   );
 
   const onSubmit = async (data: CreateCommentFormInputs) =>
