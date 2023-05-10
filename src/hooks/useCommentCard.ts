@@ -10,9 +10,9 @@ type useCommentCardResponse = {
 export const useCommentCard = ({
   created,
 }: useCommentCardProps): useCommentCardResponse => {
-  const utcCreatedDateTime = `${created} Z`;
+  const isoCreatedDateTime = created.replace(" ", "T") + "Z";
 
-  const date = new Date(utcCreatedDateTime);
+  const date = new Date(isoCreatedDateTime);
   const dayNames = [
     "Sunday",
     "Monday",
