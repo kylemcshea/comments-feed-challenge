@@ -31,5 +31,5 @@ This project aims to establish a connection with a REST API containing comments 
 - [ ] Add a "No comments" message when there are no comments to display
 - [ ] Add a Navigation bar at the top to expand the application's functionality
 - [ ] Deploy to Vercel
-- [ ] Use Zod to validate the comment creation form
-- [ ] Use React Hook Form to handle the comment creation form
+- [x] Use Zod to validate the comment creation form
+- [x] Use React Hook Form to handle the comment creation form
