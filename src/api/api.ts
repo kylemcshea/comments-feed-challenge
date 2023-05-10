@@ -7,7 +7,9 @@ import {
 } from "./routes";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001";
+const LOCAL_HOST = "http://localhost:3001";
+
+axios.defaults.baseURL = import.meta.env.API_URL || LOCAL_HOST;
 
 export const getComments = (): Promise<CommentFetchResponse> =>
   axios.get<CommentFetchResponse>(GET_COMMENTS).then((res) => res.data);
