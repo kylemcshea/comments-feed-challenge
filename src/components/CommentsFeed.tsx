@@ -41,7 +41,7 @@ const CommentsFeed: React.FC = () => {
         <CommentsNoticeCard message={"Be the first one to post a comment!"} />
       )}
       {isFetchingNextPage ? <LoadingSpinner size="md" /> : null}
-      {!hasNextPage ? (
+      {!hasNextPage && data && data.pages?.flat().length > 0 ? (
         <CommentsNoticeCard message={"No more comments to load!"} />
       ) : null}
       <InfiniteScroll
