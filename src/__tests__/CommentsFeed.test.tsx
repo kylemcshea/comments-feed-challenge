@@ -4,6 +4,7 @@ import CommentsFeed from "../components/CommentsFeed";
 import { mockComments } from "../__mocks__/mockComments";
 
 jest.mock("../hooks/useCommentsFeed");
+jest.mock("../components/InfiniteScroll");
 
 describe("[[ COMMENTS FEED ]]", () => {
   test("loading state", () => {
@@ -25,13 +26,21 @@ describe("[[ COMMENTS FEED ]]", () => {
   test("comments render", () => {
     (useCommentsFeed as jest.Mock).mockReturnValue({
       data: mockComments,
+      isLoading: false,
+      isError: false,
+      isFetchingNextPage: true,
+      hasNextPage: true,
     });
 
     render(<CommentsFeed />);
     expect(
-      screen.getByText("User 1 on Tuesday at 6:23 PM")
+      screen.getByText("Stephanie on Tuesday at 6:24 PM")
     ).toBeInTheDocument();
-    expect(screen.getByText("hi on Wednesday at 3:02 PM")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "The Yankees are my favorite team and they're off to a strong start this season. I can't wait to see what they can do in the playoffs."
+      )
+    ).toBeInTheDocument();
   });
 
   test("no comments", () => {
