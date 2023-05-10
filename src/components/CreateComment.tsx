@@ -44,7 +44,7 @@ const CreateComment: React.FC = () => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="space-y-4 flex flex-col justify-center mx-auto border border-gray-300 rounded-md shadow-md p-4 my-4"
+      className="space-y-4 flex flex-col justify-center mx-auto border border-gray-300 rounded-md shadow-md p-4 my-8 sm:my-4 md:my-4"
     >
       <div className="flex flex-col">
         <label htmlFor="name" className="text-sm font-medium mb-2">
