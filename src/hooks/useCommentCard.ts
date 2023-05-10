@@ -10,7 +10,9 @@ type useCommentCardResponse = {
 export const useCommentCard = ({
   created,
 }: useCommentCardProps): useCommentCardResponse => {
-  const date = new Date(created);
+  const utcCreatedDateTime = `${created} Z`;
+
+  const date = new Date(utcCreatedDateTime);
   const dayNames = [
     "Sunday",
     "Monday",
@@ -21,6 +23,9 @@ export const useCommentCard = ({
     "Saturday",
   ];
   const dayOfWeek = dayNames[date.getDay()];
+
+  console.log({ date });
+
   const time = date.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
