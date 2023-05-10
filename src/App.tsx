@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import "./App.css";
 import CommentsFeed from "./components/CommentsFeed";
 import CreateComment from "./components/CreateComment";
 
