@@ -16,10 +16,10 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   color = "yellow",
 }) => {
   return (
-    <div role="status">
+    <div role="status" className="flex justify-center mt-8">
       <svg
         aria-hidden="true"
-        className={`inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 ${COLOR_MAP[color]}`}
+        className={`inline w-16 h-16 mr-2 text-gray-200 animate-spin dark:text-gray-600 ${COLOR_MAP[color]}`}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
