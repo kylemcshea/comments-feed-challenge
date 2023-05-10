@@ -8,10 +8,7 @@ import LoadingSpinner from "./LoadingSpinner";
 import { createComment } from "../api/api";
 
 const CreateCommentSchema = z.object({
-  name: z
-    .string()
-    .nonempty({ message: "Name is required" })
-    .regex(/^[A-Za-z]+$/, { message: "Name cannot have any numbers" }),
+  name: z.string().nonempty({ message: "Name is required" }),
   message: z.string().nonempty({ message: "Message is required" }),
 });
 
