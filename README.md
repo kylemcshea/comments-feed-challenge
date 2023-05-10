@@ -20,7 +20,7 @@ This project aims to establish a connection with a REST API containing comments 
 - [ ] Real-time data updates on comments via WebSocket
 - [ ] Engaging animations for comment cards using Framer Motion
 - [ ] Captivating loading screen to welcome users
-- [ ] Jest unit tests
+- [x] Jest unit tests
 - [ ] Continuous integration and continuous deployment (CI/CD) using Jest, integrated with GitHub
 - [x] Animated button in the comment creation section
 - [ ] Clean and structured repository file organization
@@ -33,3 +33,4 @@ This project aims to establish a connection with a REST API containing comments 
 - [ ] Deploy to Vercel
 - [x] Use Zod to validate the comment creation form
 - [x] Use React Hook Form to handle the comment creation form
+- [ ] Fix the time not being displayed correctly in the comment cards
