@@ -42,7 +42,7 @@ const CommentsFeed: React.FC = () => {
       )}
       {isFetchingNextPage ? <LoadingSpinner size="md" /> : null}
       {!hasNextPage && data && data.pages?.flat().length > 0 ? (
-        <CommentsNoticeCard message={"No more comments to load!"} />
+        <CommentsNoticeCard message={"No more comments to load"} />
       ) : null}
       <InfiniteScroll
         canFetchMore={!!hasNextPage}

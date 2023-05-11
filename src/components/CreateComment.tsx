@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import LoadingSpinner from "./LoadingSpinner";
@@ -24,6 +24,8 @@ const CreateComment: React.FC = () => {
     resolver: zodResolver(CreateCommentSchema),
   });
 
+  const queryClient = useQueryClient();
+
   const commentMutation = useMutation((variables: CreateCommentFormInputs) =>
     createComment(variables)
   );
@@ -31,7 +33,10 @@ const CreateComment: React.FC = () => {
   const onSubmit = async (data: CreateCommentFormInputs) =>
     commentMutation
       .mutateAsync(data)
-      .then(() => reset())
+      .then(() => {
+        reset();
+        queryClient.invalidateQueries("getCommentsPagination");
+      })
       .catch((err) => {
         console.error(err);
       });
