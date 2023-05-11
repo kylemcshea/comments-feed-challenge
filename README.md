@@ -6,8 +6,6 @@
   <img src="https://img.shields.io/badge/Tailwind_CSS-blue?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
   <img src="https://img.shields.io/badge/Jest-red?style=for-the-badge&logo=jest" alt="Jest" />
   <img src="https://img.shields.io/badge/Vite-blue?style=for-the-badge&logo=vite" alt="Vite" />
-  <img src="https://img.shields.io/badge/StompJS-yellow?style=for-the-badge" alt="StompJS" />
-  <img src="https://img.shields.io/badge/SockJS-orange?style=for-the-badge" alt="SockJS" />
   <img src="https://img.shields.io/badge/Axios-purple?style=for-the-badge" alt="Axios" />
 </p>
 
@@ -25,7 +23,7 @@ This project aims to establish a connection with a REST API containing comments 
 - [x] Animated button in the comment creation section
 - [x] Clean and structured repository file organization
 - [x] Separate API calls in its own file for easy function exports
-- [ ] Responsive design for mobile devices
+- [x] Responsive design for mobile devices
 - [ ] Mailchimp-like color palette
 - [x] Use of Axios for API requests
 - [x] Add a "No comments" message when there are no comments to display
